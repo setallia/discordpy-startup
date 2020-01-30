@@ -17,9 +17,11 @@ async def on_command_error(ctx, error):
 async def ping(ctx):
     await ctx.send('pong')
     
-@bot.command()
-async def neko(ctx):
-    await ctx.send('にゃーん')
-
+@tasks.loop(seconds=60)
+async def loop():
+    now = datetime.now().strftime('%H:%M')
+    if now == '07:12':
+        channel = client.get_channel(CHANNEL_ID)
+        await channel.send('おはよう')
 
 bot.run(token)
