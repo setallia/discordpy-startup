@@ -16,12 +16,6 @@ async def on_command_error(ctx, error):
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
-    
-@tasks.loop(seconds=60)
-async def loop():
-    now = datetime.now().strftime('%H:%M')
-    if now == '07:15':
-        channel = client.get_channel(ハロンタウン)
-        await channel.send('おはよう')
+  
 
 bot.run(token)
