@@ -20,7 +20,7 @@ async def ping(ctx):
 @tasks.loop(seconds=60)
 async def loop():
     now = datetime.now().strftime('%H:%M')
-    if now == '07:1':
+    if now == '07:15':
         channel = client.get_channel(ハロンタウン)
         await channel.send('おはよう')
 
