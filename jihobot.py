@@ -9,7 +9,7 @@ client = discord.Client()
 @tasks.loop(seconds=60)
 async def loop():
     now = datetime.now().strftime('%H:%M')
-    if now == '07:23':
+    if now == '07:24':
         channel = client.get_channel(CHANNEL_ID)
         await channel.send('おはよう')  
 
